@@ -1,363 +1,259 @@
-#SLIDE VARIABLES ##################################################
+# SLIDE: VARIABLES ##################################################
 
-def f():
-    #local variable
-    s = "DevOps course."
-    print(s)
-  
-  
+# Function demonstrating the use of local variables
+def show_local_variable():
+    s = "DevOps course."  # Local variable
+    print("Local variable inside function:", s)
+
 # Global variable
 s = "Python Data"
-f()
-print(s)
+print("\n-- SLIDE: VARIABLES --")
+show_local_variable()
+print("Global variable outside function:", s)
 
 
+# SLIDE: DATA TYPES #################################################
 
-#SLIDE DATA TYPES #################################################
+print("\n-- SLIDE: DATA TYPES --")
 
+# Tuple Example
 tuple1 = (("cicd", "Jenkins"), ("security", "fortify"))
-print(tuple1)
+print("\nTuple:", tuple1)
 
+# List Example
 list_data = [9, 2.9, [-3, 5], ["jenkins", "Jira"]]
-print(list_data)
+print("\nList:", list_data)
 
-
-
+# Different ways to store alphabets
 letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
 string_letters = str(letters)
-lists_letters = list(letters)
-tuples_letters = tuple(letters)
-sets_letters = set(letters)
+list_letters = list(letters)
+tuple_letters = tuple(letters)
+set_letters = set(letters)
+
+print("\nString:", string_letters)
+print("\nList:", list_letters)
+print("\nTuple:", tuple_letters)
+print("\nSet:", set_letters)
+
+# Dictionary Example
+dict1 = {"name": "Devops", "batch": 1.0, "canVote": True, "name": "test"}
+print("\nDictionary:", dict1)
+print("\nAccess Dictionary Value by key 'name':", dict1["name"])
 
 
-print("String: ", string_letters)
-print() # for new line
-print("Lists: ", lists_letters)
-print() # for new line
-print("Tuples: ", tuples_letters)
-print() # for new line
-print("Sets: ", sets_letters)
+# SLIDE: NUMBERS/OPERATORS #################################################
 
-
-
-
-dict1 = {"name":"Devops", "batch":1.0, "canVote":True,"name":"test"}
-print(dict1)
-
-print(dict1["name"])
-
-
-######SLIDE Numbers/Operators #################################################
+print("\n-- SLIDE: NUMBERS/OPERATORS --")
 
 x = 13
-if(x>=13):
-    print("Met the condition")
+if x >= 13:
+    print("\nCondition met: x >= 13")
 else:
-    print("Didn't met the condition")
+    print("\nCondition not met")
+
+# Boolean operations
+print("\nBoolean values:")
+print("Zero:", bool(0))
+print("Integer:", bool(23))
+print("Float:", bool(3.142))
+print("Complex:", bool(5 + 2j))
 
 
-print("Zero:",bool(0))
-print("Integer:",bool(23))
-print("Float:",bool(3.142))
-print("Complex:",bool(5+2j))
+# OPERATIONS ON STRINGS ##################################################
 
+print("\n-- SLIDE: OPERATIONS ON STRINGS --")
 
-######## OPERTATIONS ON STRINGS #####
-
-
-#1
 Tool = "SONAR"
-len1 = len(Tool)
-print(len1)
-print("Code analysis tool is", Tool, ".Its part of devops")
+print(f"\nLength of Tool '{Tool}':", len(Tool))
+print(f"Code analysis tool is {Tool}. It’s part of DevOps.")
 
-#2
 IAAS = "TERRAFORM"
-print(IAAS[:5])      #Slicing from Start
-print(IAAS[5:])      #Slicing till End
-print(IAAS[2:6])     #Slicing in between
+print("\nFirst 5 characters of IAAS:", IAAS[:5])
+print("Characters from 5th position onwards:", IAAS[5:])
+print("Slicing in between (2-6):", IAAS[2:6])
 
-#3
+# Loop through string
+print("\nCharacters in 'AMAZON WEB SERVICES':")
 Name = "AMAZON WEB SERVICES"
-for i in Name:
-    print(i)
+for char in Name:
+    print(char, end=" ")
+print()
 
 
+# SLIDE: LIST OPERATIONS #################################################
 
-######SLIDE LIST #################################################
+print("\n-- SLIDE: LIST OPERATIONS --")
 
-ToolsData = ["Maven", "Ansible", "Jenkins", "Sonar"] 
+ToolsData = ["Maven", "Ansible", "Jenkins", "Sonar"]
 if "Maven" in ToolsData:
-    print("Maven is present.")
+    print("\nMaven is present in ToolsData.")
 else:
-    print("Maven is absent.")
-
+    print("\nMaven is absent in ToolsData.")
 
 ToolsData.append("Fortify")
+print("\nAfter appending Fortify:", ToolsData)
 
-#print(ToolsData)
+del ToolsData[3]  # Deleting the 4th item
+print("\nAfter deleting 4th item:", ToolsData)
 
-
-del ToolsData[3]
-
-print(ToolsData)
-
-
-########LIST ITERATION #######################################
-
-
-ToolsData = ["Maven","Ansible","Jenkins","Sonar"] 
+# Sorting list
 ToolsData.sort()
-print(ToolsData)
+print("\nSorted ToolsData:", ToolsData)
 
 
-############CONDITIONAL STATEMENTS ###########################
+# SLIDE: CONDITIONAL STATEMENTS #################################################
 
+print("\n-- SLIDE: CONDITIONAL STATEMENTS --")
 
 applePrice = 180
 budget = 200
-if (applePrice <= budget):
-    print("Alexa, add 1kg Apples to the cart.")
-
-
+if applePrice <= budget:
+    print("\nAlexa, add 1kg Apples to the cart.")
 
 VERSION = 18
-if (VERSION < 0):
-    print("Version is negative.")
-elif (VERSION > 0):
-    if (VERSION <= 10):
-        print("Version is between 1-10")
-    elif (VERSION > 10 and VERSION <= 20):
-        print("Version is between 11-20")
-    else:
-        print("Version is greater than 20")
+if VERSION < 0:
+    print("\nVersion is negative.")
+elif 0 < VERSION <= 10:
+    print("\nVersion is between 1-10")
+elif 10 < VERSION <= 20:
+    print("\nVersion is between 11-20")
 else:
-    print("Version is zero")
+    print("\nVersion is greater than 20")
 
 
-#FOR LOOP
+# SLIDE: LOOPS ###########################################################
 
-#Iterating over string
+print("\n-- SLIDE: LOOPS --")
+
+# For loop to iterate over string
 name = 'SINGAM'
-for i in name:
-    print(i)
+print("\nIterating over string 'SINGAM':")
+for letter in name:
+    print(letter, end=" ")
+print()
 
+# Iterating over a tuple
+tools = ("Maven", "Jenkins", "Sonar", "Jira")
+print("\nIterating over a tuple:")
+for tool in tools:
+    print(tool)
 
-#iterating over a tuple
-
-tools = ("Maven", "Jenkins", "sonar", "jira")
-for x in tools:
-    print(x)
-
-
-#PYTHON WHILE LOOP
-
+# While loop
 count = 5
-while (count > 0):
-    print(count)
-    count = count - 1
+print("\nWhile loop counting down:")
+while count > 0:
+    print(count, end=" ")
+    count -= 1
+print()
 
-
-
-#NESTED LOOPS
-i=1
-while (i<=3):
-    #for loop will run till end
+# Nested loops
+i = 1
+print("\nMultiplication table using nested loops:")
+while i <= 3:
     for k in range(1, 4):
-        print(i, "*", k, "=", (i*k))
-    i = i + 1
+        print(f"{i} * {k} = {i * k}")
+    i += 1
     print()
 
 
-for i in range(1, 4):
-    k = 1
-    while (k<=3):
-        print(i, "*", k, "=", (i*k))
-        k = k + 1
-    print()
+# SLIDE: FUNCTIONS #########################################################
 
-
-
-##### PYTHON FUNCTIONS ###############################
+print("\n-- SLIDE: FUNCTIONS --")
 
 def toolname(security, analysis):
-    print("Tools,", security, analysis)
+    print(f"\nTools: {security}, {analysis}")
 
 toolname("Fortify", "Sonar")
 
+# Function with default arguments
+def greeting(fname, mtame="Jenkins", boardname="Jira"):
+    print(f"\nHello, {fname}, {mtame}, {boardname}")
 
-def name(fname, mtame = "Jenkins", boardname = "Jira"):
-    print("Hello,", fname, mtame, boardname)
+greeting("Sonar")
 
-name("Sonar")
+# Function with keyword arguments
+def name_tools(firsttool, secondtool, thirdtool):
+    print(f"\nHello, {firsttool}, {secondtool}, {thirdtool}")
 
+name_tools(thirdtool="Ansible", firsttool="Terraform", secondtool="JMeter")
 
-def name(firsttool, secondtool, thirdtool):
-    print("Hello,", firsttool, secondtool, thirdtool)
+# Function with variable-length arguments
+def name_varargs(*tools):
+    print(f"\nHello, {tools[0]}, {tools[1]}, {tools[2]}")
 
-name(thirdtool = "Ansible", firsttool = "Terraform", secondtool = "Jmeter")
-
-
-def name(firsttool, secondtool, thirdtool):
-    print("Hello,", firsttool, secondtool, thirdtool)
-
-name("Ansible", "Terraform", "Jmeter")
-
-
-
-def name(*name):
-    print("Hello,", name[0], name[1], name[2])
-
-name("Ansible", "Terraform", "Jmeter")
+name_varargs("Ansible", "Terraform", "JMeter")
 
 
+# SLIDE: RECURSION ##########################################################
 
-########### RECURSION SLIDE ########################################
+print("\n-- SLIDE: RECURSION --")
 
-
-def factorial(num): 
-    if (num == 1 or num == 0):
+def factorial(num):
+    if num == 1 or num == 0:
         return 1
     else:
-        return (num * factorial(num - 1))   ########FUNCTION IS FACTORIAL
-  
-# Driver Code 
-num = 7; 
-print("number: ",num)
-print("Factorial: ",factorial(num))
+        return num * factorial(num - 1)
+
+# Example use of factorial function
+num = 7
+print(f"\nFactorial of {num}: {factorial(num)}")
 
 
+# SLIDE: OOPS ###############################################################
 
+print("\n-- SLIDE: OOPS --")
 
-from math import *
-print(pi)
-print(factorial(6))
-
-
-
-#############PYTHON OOPS ##########################
-
-###CREATE A CLASS
-
+# Class Example
 class Tools:
-    name = "Jenkins"
-    version = 20
-
-T1 = Tools()
-print(T1.name)
-print(T1.version)
-
-
-####CREATE AN OBJECT
-class Tools:
-    name = "Jenkins"
-    version = 20
-
-    def toolsdes(self):
-        print(self.version, self.name + "\tTOOLS")
-
-T1 = Tools()
-T1.toolsdes()
-
-print(T1.name)
-print(T1.version)
-
-
-#####INITIALIZE 
-
-# A Sample class with init method
-class Data:
- 
-    # init method or constructor
-    def __init__(self, name):
+    def __init__(self, name="Jenkins", version=20):
         self.name = name
- 
-    # Sample Method
-    def say_hi(self):
-        print('Hello, my name is', self.name)
- 
- 
-p = Data('PowerBI')
-p.say_hi()
+        self.version = version
+
+    def tools_description(self):
+        print(f"{self.name}, Version: {self.version}")
+
+tool = Tools()
+tool.tools_description()
 
 
-#######PYTHON INHERITENCE ################
-
-
-
-# Python program to
-# demonstrate init with
-# inheritance
- 
-class A(object):
+# Class with Inheritance
+class A:
     def __init__(self, something):
-        print("A init called")
+        print("\nA init called")
         self.something = something
- 
- 
+
 class B(A):
     def __init__(self, something):
-        # Calling init of parent class
+        print("\nB init called")
         A.__init__(self, something)
-        print("B init called")
-        self.something = something
- 
- 
+
 obj = B("Something")
 
 
+# SLIDE: JSON OPERATIONS ##################################################
 
-# Python program to
-# demonstrate init with
-# inheritance
- 
-class A(object):
-    def __init__(self, something):
-        print("A init called")
-        self.something = something
- 
- 
-class B(A):
-    def __init__(self, something):
-        print("B init called")
-        self.something = something
-        # Calling init of parent class
-        A.__init__(self, something)
- 
- 
-obj = B("Something")
-
-
-############JSON SLIDE ###############################
-
-
+print("\n-- SLIDE: JSON OPERATIONS --")
 
 import json
 
-# JSON String:
-tools =  '["Maven", "Jira", "Kubernetes", "Docker"]'
+# JSON string to Python list
+json_string = '["Maven", "Jira", "Kubernetes", "Docker"]'
+tools_list = json.loads(json_string)
+print("\nPython List:", tools_list)
 
-# JSON string to python dictionary:
-lst1 = json.loads(tools)
-print(lst1)
-
-
-import json
-
-# python dictionary
-lst1 = ['Maven', 'Jira', 'Kubernetes', 'Docker']
-
-# Convert Python dict to JSON
-jsonObj = json.dumps(lst1)
-print(jsonObj)
+# Python list to JSON string
+python_list = ['Maven', 'Jira', 'Kubernetes', 'Docker']
+json_object = json.dumps(python_list)
+print("\nJSON String:", json_object)
 
 
-######PYTHON TRY CATCH #############
+# SLIDE: EXCEPTION HANDLING ################################################
 
+print("\n-- SLIDE: EXCEPTION HANDLING --")
 
 try:
-    num = int(input("Enter an integer: "))
+    num = int(input("\nEnter an integer: "))
 except ValueError:
     print("Number entered is not an integer.")
 else:

@@ -1,6 +1,6 @@
 ##pip install -U scikit-learn
 
-import numpy as np 
+import numpy as np
 import pandas as pd
 import itertools
 
@@ -13,7 +13,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 
 
 #Read the data
-df=pd.read_csv('/Users/praveensingampalli/Documents/BOOTCAMP2_FINAL/Python/news.csv')
+df=pd.read_csv('Python\news.csv')
 
 
 #Get shape and head
